@@ -9,7 +9,7 @@ Test for functions
     ** 表示dict形式的参数列表，内部按照dict方式进行处理。
     匹配顺序严格按照参数定义顺序
 '''
-print('============parameters matching==============')
+print('=========================parameters matching===========================')
 def multi_var_func(*args):
     for arg in args:
         print(arg)
