@@ -103,3 +103,28 @@ print('fib[5] : %d ' % fib[5])
 print('fib[2:6] :', fib[2:6])
 print('fib[:10] :', fib[:10])
 
+'''
+__call__(self,*):
+    表示这个类对应的对象为一个可调用的对象，可以直接使用 () 调用其__call__()方法。
+__getattr__(self, attr_name):
+    表示获取该对象的某一个属性，只有当其他属性均未找到时才会去调用。
+'''
+print('=====================Test case : Class Printer=========================')
+class Printer(object):
+    def __init__(self) -> None:
+        super().__init__()
+        self.name = 'my_printer'
+    
+    def __call__(self, *args, **kwds) -> None:
+        for msg in args:
+            print(msg)
+        for msg in kwds:
+            print(kwds)
+        # return super().__call__(*args, **kwds)
+    def __getattr__(self, attr_name: str) -> str:
+        return 'Attr: (' + attr_name + ') not defined'
+        
+p = Printer()
+p('this is a msg', 1, me='yc')
+print(p.name)
+print(p.sex)
