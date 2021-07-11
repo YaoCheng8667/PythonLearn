@@ -1,5 +1,5 @@
 '''
-Test Decorator
+Decorator : 装饰器
 '''
 import time
 import functools
